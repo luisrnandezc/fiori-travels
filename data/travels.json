@@ -1,0 +1,20 @@
+[
+  {
+    "TravelID": "00000001",
+    "AgencyID": "70001",
+    "CustomerID": "CUST01",
+    "TotalPrice": 1200.5
+  },
+  {
+    "TravelID": "00000002",
+    "AgencyID": "70002",
+    "CustomerID": "CUST02",
+    "TotalPrice": 899.99
+  },
+  {
+    "TravelID": "00000003",
+    "AgencyID": "70001",
+    "CustomerID": "CUST03",
+    "TotalPrice": 1540.0
+  }
+]

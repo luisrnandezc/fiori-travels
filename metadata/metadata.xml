@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0"
+  xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+
+  <edmx:DataServices>
+    <Schema Namespace="TravelService"
+      xmlns="http://docs.oasis-open.org/odata/ns/edm">
+
+      <!-- Entity Type -->
+      <EntityType Name="Travel">
+        <Key>
+          <PropertyRef Name="TravelID"/>
+        </Key>
+        <Property Name="TravelID" Type="Edm.String" Nullable="false"/>
+        <Property Name="AgencyID" Type="Edm.String"/>
+        <Property Name="CustomerID" Type="Edm.String"/>
+        <Property Name="TotalPrice" Type="Edm.Decimal" Precision="13" Scale="2"/>
+      </EntityType>
+
+      <!-- Entity Container -->
+      <EntityContainer Name="Container">
+        <EntitySet Name="Travels" EntityType="TravelService.Travel"/>
+      </EntityContainer>
+
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
