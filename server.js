@@ -22,7 +22,7 @@ app.use('/odata/$metadata', require('./routes/metadata'));
 app.use('/odata/Travels', require('./routes/travels'));
 
 // Start server
-const PORT = 4004;
+const PORT = process.env.PORT || 4004;
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
