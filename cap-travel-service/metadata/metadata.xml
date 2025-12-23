@@ -1,27 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0"
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx
+  Version="4.0"
   xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
 
   <edmx:DataServices>
-    <Schema Namespace="TravelService"
+
+    <Schema
+      Namespace="TravelService"
       xmlns="http://docs.oasis-open.org/odata/ns/edm">
 
-      <!-- Entity Type -->
-      <EntityType Name="Travel">
+      <!-- ===================== -->
+      <!-- Entity: Customer -->
+      <!-- ===================== -->
+      <EntityType Name="Customer">
         <Key>
-          <PropertyRef Name="TravelID"/>
+          <PropertyRef Name="CustomerNumber"/>
         </Key>
-        <Property Name="TravelID" Type="Edm.String" Nullable="false"/>
-        <Property Name="AgencyID" Type="Edm.String"/>
-        <Property Name="CustomerID" Type="Edm.String"/>
-        <Property Name="TotalPrice" Type="Edm.Decimal" Precision="13" Scale="2"/>
+
+        <Property Name="CustomerNumber" Type="Edm.String" Nullable="false"/>
+        <Property Name="CustomerName" Type="Edm.String"/>
+        <Property Name="City" Type="Edm.String"/>
+        <Property Name="Country" Type="Edm.String"/>
+        <Property Name="Email" Type="Edm.String"/>
+        <Property Name="Phone" Type="Edm.String"/>
+        <Property Name="Discount" Type="Edm.Decimal" Precision="5" Scale="2"/>
+        <Property Name="Status" Type="Edm.String"/>
+
+        <NavigationProperty
+          Name="Bookings"
+          Type="Collection(TravelService.Booking)"
+          Partner="Customer"/>
       </EntityType>
 
+      <!-- ===================== -->
+      <!-- Entity: Booking -->
+      <!-- ===================== -->
+      <EntityType Name="Booking">
+        <Key>
+          <PropertyRef Name="BookingNumber"/>
+        </Key>
+
+        <Property Name="BookingNumber" Type="Edm.String" Nullable="false"/>
+        <Property Name="CustomerNumber" Type="Edm.String" Nullable="false"/>
+        <Property Name="AirlineID" Type="Edm.String"/>
+        <Property Name="ConnectionNumber" Type="Edm.String"/>
+        <Property Name="FlightDate" Type="Edm.Date"/>
+        <Property Name="Class" Type="Edm.String"/>
+        <Property Name="Currency" Type="Edm.String"/>
+        <Property Name="Amount" Type="Edm.Decimal" Precision="13" Scale="2"/>
+        <Property Name="IsCancelled" Type="Edm.Boolean"/>
+
+        <NavigationProperty
+          Name="Customer"
+          Type="TravelService.Customer"
+          Partner="Bookings"/>
+      </EntityType>
+
+      <!-- ===================== -->
       <!-- Entity Container -->
+      <!-- ===================== -->
       <EntityContainer Name="Container">
-        <EntitySet Name="Travels" EntityType="TravelService.Travel"/>
+
+        <EntitySet
+          Name="Customers"
+          EntityType="TravelService.Customer">
+          <NavigationPropertyBinding
+            Path="Bookings"
+            Target="Bookings"/>
+        </EntitySet>
+
+        <EntitySet
+          Name="Bookings"
+          EntityType="TravelService.Booking">
+          <NavigationPropertyBinding
+            Path="Customer"
+            Target="Customers"/>
+        </EntitySet>
+
       </EntityContainer>
 
     </Schema>
+
   </edmx:DataServices>
 </edmx:Edmx>
