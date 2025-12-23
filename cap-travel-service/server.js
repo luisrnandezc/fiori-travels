@@ -19,7 +19,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/odata/$metadata', require('./routes/metadata'));
-app.use('/odata/Travels', require('./routes/travels'));
+app.use('/odata/Customers', require('./routes/customers'));
+app.use('/odata/Bookings', require('./routes/bookings'));
 
 // Start server
 const PORT = process.env.PORT || 4004;
