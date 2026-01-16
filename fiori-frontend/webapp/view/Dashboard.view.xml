@@ -1,0 +1,46 @@
+<mvc:View
+    controllerName="mock.travels.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <App>
+        <Page title="Travel Dashboard">
+
+            <content>
+                <Table 
+                    id="customersTable" 
+                    items="{
+                        path: '/Customers',
+                        parameters: {
+                            $$groupId: '$direct'
+                        }
+                    }">
+
+                    <columns>
+                        <Column>
+                            <Text text="Customer" />
+                        </Column>
+                        <Column>
+                            <Text text="City" />
+                        </Column>
+                        <Column>
+                            <Text text="Country" />
+                        </Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{CustomerName}" />
+                                <Text text="{City}" />
+                                <Text text="{Country}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </content>
+
+        </Page>
+    </App>
+
+</mvc:View>
