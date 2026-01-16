@@ -24,6 +24,13 @@ app.use('/odata', (req, res, next) => {
   next();
 });
 
+app.use(
+  cors({
+    origin: '*',
+    exposedHeaders: ['OData-Version'], // make the header visible to JS
+  }),
+);
+
 app.use('/odata/$metadata', require('./routes/metadata'));
 app.use('/odata/Customers', require('./routes/customers'));
 app.use('/odata/Bookings', require('./routes/bookings'));
