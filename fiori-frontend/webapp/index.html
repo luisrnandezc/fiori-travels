@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fiori Travels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- UI5 bootstrap -->
+    <script
+      id="sap-ui-bootstrap"
+      src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_horizon"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-async="true"
+      data-sap-ui-libs="sap.m"
+      data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
+      data-sap-ui-resourceroots='{
+            "mock/travels": "./mock/travels"
+        }'
+    ></script>
+  </head>
+
+  <body class="sapUiBody">
+    <div
+      data-sap-ui-component
+      data-name="mock.travels"
+      data-id="container"
+    ></div>
+  </body>
+</html>

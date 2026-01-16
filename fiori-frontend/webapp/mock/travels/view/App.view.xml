@@ -1,0 +1,16 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="mock.travels.controller.App">
+
+    <App>
+        <pages>
+            <Page title="Fiori Travels">
+                <content>
+                    <Text text="Hello Fiori Travels!" />
+                </content>
+            </Page>
+        </pages>
+    </App>
+
+</mvc:View>
