@@ -18,6 +18,12 @@ app.get('/', (req, res) => {
   res.send('Travel OData Service is running');
 });
 
+// Add OData V4 header
+app.use('/odata', (req, res, next) => {
+  res.setHeader('OData-Version', '4.0');
+  next();
+});
+
 app.use('/odata/$metadata', require('./routes/metadata'));
 app.use('/odata/Customers', require('./routes/customers'));
 app.use('/odata/Bookings', require('./routes/bookings'));
