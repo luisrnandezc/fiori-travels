@@ -7,9 +7,6 @@ const cors = require('cors');
 // Create Express application
 const app = express();
 
-// Allow calls from browser
-app.use(cors());
-
 // Parse JSON request bodies
 app.use(express.json());
 
@@ -18,18 +15,17 @@ app.get('/', (req, res) => {
   res.send('Travel OData Service is running');
 });
 
-// Add OData V4 header
+// OData routes middleware
 app.use('/odata', (req, res, next) => {
+  // Add OData V4 version header
   res.setHeader('OData-Version', '4.0');
-  next();
-});
 
-app.use(
+  // Apply CORS with exposed header
   cors({
     origin: '*',
     exposedHeaders: ['OData-Version'], // make the header visible to JS
-  }),
-);
+  })(req, res, next);
+});
 
 app.use('/odata/$metadata', require('./routes/metadata'));
 app.use('/odata/Customers', require('./routes/customers'));
