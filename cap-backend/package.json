@@ -42,6 +42,10 @@
           "X-Requested-With",
           "OData-Version",
           "OData-MaxVersion"
+        ],
+        "exposeHeaders": [
+          "OData-Version",
+          "OData-MaxVersion"
         ]
       }
     }
