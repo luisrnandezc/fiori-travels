@@ -9,7 +9,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "https://fiori-travels-api.onrender.com/odata/v4/travel/",
+        "uri": "https://cap-travel-service.onrender.com/odata/v4/travel/",
         "type": "OData",
         "settings": {
           "odataVersion": "4.0",
