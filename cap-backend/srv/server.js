@@ -4,12 +4,18 @@ const cors = require('cors');
 cds.on('bootstrap', (app) => {
   app.use(
     cors({
-      origin: '*', // Allows any origin
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-      preflightContinue: false,
-      optionsSuccessStatus: 204,
+      origin: '*',
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+      allowedHeaders: [
+        'Content-Type',
+        'Authorization',
+        'X-Requested-With',
+        'OData-Version',
+        'OData-MaxVersion',
+      ],
+      exposedHeaders: ['OData-Version', 'OData-MaxVersion'],
     }),
-  ); // This enables CORS for ALL origins
+  );
 });
 
 module.exports = cds.server;
