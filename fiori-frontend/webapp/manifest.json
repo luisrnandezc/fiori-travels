@@ -6,6 +6,16 @@
     "title": "Fiori mock travels app",
     "applicationVersion": {
       "version": "1.0.0"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "https://fiori-travels-api.onrender.com/odata/v4/travel/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
     }
   },
   "sap.ui5": {
@@ -17,9 +27,8 @@
     },
     "models": {
       "": {
-        "type": "sap.ui.model.odata.v4.ODataModel",
+        "dataSource": "mainService",
         "settings": {
-          "serviceUrl": "https://cap-travel-service.onrender.com/odata/",
           "synchronizationMode": "None",
           "operationMode": "Server",
           "autoExpandSelect": true
