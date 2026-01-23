@@ -7,8 +7,14 @@
         <Page title="Travel Dashboard">
 
             <content>
+                <SearchField
+                    id="searchCustomer"
+                    width="50%"
+                    placeholder="Search by customer name..."
+                    search=".onSearch"/>
+
                 <Table 
-                    id="customersTable" 
+                    id="customersTable"
                     items="{
                         path: '/Customers',
                         parameters: {
