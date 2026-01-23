@@ -7,6 +7,7 @@
   "dependencies": {
     "@cap-js/sqlite": "^2",
     "@sap/cds": "^9",
+    "@sap/cds-common-content": "^3.1.0",
     "cors": "^2.8.6",
     "express": "^4"
   },
@@ -25,8 +26,24 @@
         "kind": "dummy"
       }
     },
-    "server": {
-      "impl": "srv/server.js"
+    "features": {
+      "cors": {
+        "origin": "*",
+        "methods": [
+          "GET",
+          "POST",
+          "PATCH",
+          "DELETE",
+          "OPTIONS"
+        ],
+        "allowedHeaders": [
+          "Content-Type",
+          "Authorization",
+          "X-Requested-With",
+          "OData-Version",
+          "OData-MaxVersion"
+        ]
+      }
     }
   },
   "engines": {
