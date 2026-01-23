@@ -41,11 +41,13 @@
           "Authorization",
           "X-Requested-With",
           "OData-Version",
-          "OData-MaxVersion"
+          "OData-MaxVersion",
+          "x-csrf-token"
         ],
         "exposedHeaders": [
           "OData-Version",
-          "OData-MaxVersion"
+          "OData-MaxVersion",
+          "x-csrf-token"
         ]
       }
     }
