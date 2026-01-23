@@ -43,7 +43,7 @@
           "OData-Version",
           "OData-MaxVersion"
         ],
-        "exposeHeaders": [
+        "exposedHeaders": [
           "OData-Version",
           "OData-MaxVersion"
         ]
