@@ -12,8 +12,9 @@ cds.on('bootstrap', (app) => {
         'X-Requested-With',
         'OData-Version',
         'OData-MaxVersion',
+        'x-csrf-token',
       ],
-      exposedHeaders: ['OData-Version', 'OData-MaxVersion'],
+      exposedHeaders: ['OData-Version', 'OData-MaxVersion', 'x-csrf-token'],
     }),
   );
 });
