@@ -1,0 +1,13 @@
+CustomerNumber;Form;CustomerName;Street;PostCode;City;Country;Email;Telephone;Discount
+1;Firma;SAP SE;Dietmar-Hopp-Allee 16;69190;Walldorf;DE;info@sap.de;06227-34-0;10
+2;Herr;Andreas Klotz;Pimpinellenweg 9;69190;Walldorf;DE;Andreas.Klotz@sap.com;05344-676792;20
+3;Herr;Hans Bullinger;Veilchenstraße 12;69119;Heidelberg;DE;Hansi@Bulli.de;02099-44591;0
+4;Frau;Staerck;Kaiserstr. 55;69115;Heidelberg;DE;Farbenblind@gmx.de;07508-66-7886;0
+5;Mister;Martin;44 Harolds Road;L07 1AZ;Liverpool;GB;Steve.Martin@hool.uk;3457-345-2472;0
+6;Miss;Starr;74 Kings Road;L07 3BC;Liverpool;GB;FCStar@unio.uk;5454-46-4674;0
+7;Mister;King;7 Abbey Road;M21 7AB;London;GB;Burger@King.com;6548-78-9876;0
+8;Company;Moore;14 Carnaby Street;SW3 4DE;London;GB;Moore@abc.net;3790-34-4384;0
+9;;Everton FC;Sir Wellington Road;L08 5RZ;Liverpool;GB;Football.Liverpool@sports.com;332-5678-0;0
+10;Herr;Raupp;Glockenblumenweg 5;8002;Zuerich;CH;HelmutDanielaRaupp@swiss.ch;+41 44 269 99 99;0
+11;Herr;Ballmann;Ballmanns Leiden 7;69115;Heidelberg;DE;Ball@mann.net;+49 6221 6784534;0
+12;Frau;Radetzky;Mozartstr. 102;1000;Wien;AT;Radetzky@Marsch.at;01 533 99 22;0
