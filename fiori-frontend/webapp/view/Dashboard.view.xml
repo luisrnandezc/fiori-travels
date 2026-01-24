@@ -4,12 +4,13 @@
     xmlns="sap.m">
 
     <App>
-        <Page title="Travel Dashboard">
+        <Page title="Travel Dashboard" class="sapUiResponsiveContentPadding">
 
             <content>
                 <SearchField
                     id="searchCustomer"
                     width="50%"
+                    class="sapUiSmallMarginBottom"
                     placeholder="Search by customer name..."
                     search=".onSearch"/>
 
