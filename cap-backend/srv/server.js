@@ -17,6 +17,8 @@ cds.on('bootstrap', (app) => {
         'sap-contextid-accept',
         'Accept',
         'Accept-Language',
+        'mime-version',
+        'content-transfer-encoding',
       ],
       exposedHeaders: ['OData-Version', 'OData-MaxVersion', 'x-csrf-token'],
     }),

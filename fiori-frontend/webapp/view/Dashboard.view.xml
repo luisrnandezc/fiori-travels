@@ -5,8 +5,60 @@
 
     <App>
         <Page title="Travel Dashboard" class="sapUiResponsiveContentPadding">
-
             <content>
+
+                <!-- HEADER SECTION -->
+                 <Panel
+                    headerText="Customer Management"
+                    class="sapUiResponsiveSmallMarginBottom">
+
+                    <headerToolbar>
+                        <OverflowToolbar>
+                            <Title text="Customer Management" level="H2" />
+                            <ToolbarSpacer />
+
+                            <!-- Customer Count Badge -->
+                             <ObjectStatus 
+                                text="{= ${/Customers/$count} || 0 } Customers"
+                                state="Information"
+                                icon="sap-icon://group"/>
+                            
+                            <!-- Actions -->
+                             <Button
+                                text="Add Customer"
+                                type="Emphasized"
+                                icon="sap-icon://add"
+                                press=".onAddCustomer"/>
+                            
+                            <Button 
+                                icon="sap-icon://refresh"
+                                press=".onRefreshCustomers"/>
+                        </OverflowToolbar>
+                    </headerToolbar>
+
+                    <!-- Panel Content: Brief Description -->
+                     <content>
+                        <VBox class="sapUiSmallMargin">
+                            <Text 
+                                text="Manage your travel customers, view booking history, and create new customer records. Use the search below to find specific customers."
+                                class="sapUiTinyMarginBottom"/>
+
+                            <!--Quick stats -->
+                            <HBox>
+                                <ObjectStatus 
+                                    text="Active" 
+                                    state="Success" 
+                                    icon="sap-icon://status-positive"/>
+                                <ObjectStatus 
+                                    text="Real-Time Data" 
+                                    state="Information" 
+                                    icon="sap-icon://connected" 
+                                    class="sapUiTinyMarginBegin"/>
+                            </HBox>
+                        </VBox>
+                     </content>
+                 </Panel>
+
                 <SearchField
                     id="searchCustomer"
                     width="50%"
@@ -25,6 +77,9 @@
 
                     <columns>
                         <Column>
+                            <Text text="ID" />
+                        </Column>
+                        <Column>
                             <Text text="Customer" />
                         </Column>
                         <Column>
@@ -38,6 +93,7 @@
                     <items>
                         <ColumnListItem>
                             <cells>
+                                <Text text="{CustomerNumber}" />
                                 <Text text="{CustomerName}" />
                                 <Text text="{City}" />
                                 <Text text="{Country}" />

@@ -39,6 +39,17 @@ sap.ui.define(
           oBinding.filter();
         }
       },
+
+      onAddCustomer(): void {
+        // TODO: Navigate to the Add Customer view
+      },
+
+      onRefreshCustomers(): void {
+        const oBinding = (
+          this.byId('customersTable') as sap.m.Table
+        ).getBinding('items') as sap.ui.model.odata.v4.ODataListBinding;
+        oBinding.refresh();
+      },
     });
   },
 );
